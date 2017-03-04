@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <link rel="stylesheet/less" type="text/css" href="less/main.less">
+    <script type="text/javascript" src="/client/bower_components/less/dist/less.min.js"></script>
+</head>
+
+<body ng-controller="UserMenuController">
+    <nav>
+        <div class="nav-title">Title</div>
+        <div class="filler"></div>
+        <div class="nav-account">A</div>
+        <div class="nav-settings" ng-click="openSettings()">S</div>
+    </nav>
+    <div class="container">
+        <div class="user-menu" ng-repeat="menu in menuStructure track by $index">
+
+            <div class="menu-content">
+                <div class="menu-top">
+                    <div class="menu-title">{{menu.title}}</div>
+                    <div class="filler"></div>
+                    <div class="menu-minimalize">_</div>
+                    <div class="menu-exit" ng-click="menu.onexit()">✕</div>
+                </div>
+                <div class="menu-button" ng-repeat="item in menu.content track by $index" ng-click="item.onopen()">{{item.title}}</div>
+                <div class="filler"></div>
+            </div>
+            <div ng-mousedown="changeContentSize($event)" class="separator"></div>
+        </div>
+        <div class="content">
+            <ng-view></ng-view>
+        </div>
+    </div>
+    <script type="text/javascript" src="/client/bower_components/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="/client/bower_components/jquery-3.1.1.min/index.js"></script>
+    <script type="text/javascript" src="/client/src/js/app.module.js"></script>
+    <script type="text/javascript" src="/client/src/js/app.route.js"></script>
+    <script type="text/javascript" src="/client/src/js/userMenu.controller.js"></script>
+</body>
+
+</html>
