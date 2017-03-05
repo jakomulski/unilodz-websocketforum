@@ -10,7 +10,7 @@
     <nav>
         <div class="nav-title">Title</div>
         <div class="filler"></div>
-        <div class="nav-account">A</div>
+        <div class="nav-account" ng-click="openAccount()">A</div>
         <div class="nav-settings" ng-click="openSettings()">S</div>
     </nav>
     <div class="container">
@@ -23,7 +23,7 @@
                     <div class="menu-minimalize">_</div>
                     <div class="menu-exit" ng-click="menu.onexit()">✕</div>
                 </div>
-                <div class="menu-button" ng-repeat="item in menu.content track by $index" ng-click="item.onopen()">{{item.title}}</div>
+                <div class="menu-button" ng-repeat="item in menu.content track by $index" ng-click="item.onopen(menu)">{{item.title}}</div>
                 <div class="filler"></div>
             </div>
             <div ng-mousedown="changeContentSize($event)" class="separator"></div>
@@ -38,6 +38,7 @@
     <script type="text/javascript" src="/client/bower_components/jquery-3.1.1.min/index.js"></script>
     <script type="text/javascript" src="/client/src/js/app.module.js"></script>
     <script type="text/javascript" src="/client/src/js/app.route.js"></script>
+    <script type="text/javascript" src="/client/src/js/user.menu.service.js"></script>
     <script type="text/javascript" src="/client/src/js/userMenu.controller.js"></script>
 </body>
 
