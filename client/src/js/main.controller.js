@@ -1,8 +1,14 @@
 angular
     .module('app')
-    .controller('MainController', ['$scope', '$document', '$location', 'userMenuService', function ($scope, $document, $location, userMenuService) {
-        $scope.showSignInDialog = function () {
-            debugger;
+    .controller('MainController', ['$scope', '$document', '$location', 'userMenuService', '$mdDialog', function ($scope, $document, $location, userMenuService, $mdDialog) {
+        $scope.showSignInDialog = function (ev) {
+            $mdDialog.show({
+                controller: 'SingInController',
+                templateUrl: 'sign-up-dialog.htm',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            });
         };
         $scope.changeContentSize = function (event) {
             var target = event.target;
