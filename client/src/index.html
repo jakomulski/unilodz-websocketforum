@@ -11,8 +11,9 @@
     <nav>
         <div class="nav-title">Title</div>
         <div class="filler"></div>
-        <div class="nav-account" ng-click="openAccount()">A</div>
-        <div class="nav-settings" ng-click="openSettings()">S</div>
+        <div class="nav-sign-in" ng-click="showSignInDialog()">Sign in</div>
+        <div class="nav-account" ng-click="openAccount()"><i class="material-icons">account_circle</i></div>
+        <div class="nav-settings" ng-click="openSettings()"><i class="material-icons">settings</i></div>
     </nav>
     <div class="container">
         <div class="user-menu" ng-repeat="menu in menuStructure track by $index">
