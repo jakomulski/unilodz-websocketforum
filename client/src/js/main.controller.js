@@ -1,6 +1,9 @@
 angular
     .module('app')
     .controller('MainController', ['$scope', '$document', '$location', 'userMenuService', function ($scope, $document, $location, userMenuService) {
+        $scope.showSignInDialog = function () {
+            debugger;
+        };
         $scope.changeContentSize = function (event) {
             var target = event.target;
             var container = target.previousElementSibling;
@@ -17,6 +20,7 @@ angular
                 });
             })
         };
+
         $scope.menuStructure = userMenuService.menuStructure;
         $scope.openSettings = userMenuService.openSettings;
         $scope.openAccount = userMenuService.openAccount;
