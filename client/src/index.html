@@ -11,7 +11,7 @@
     <nav>
         <div class="nav-title">Title</div>
         <div class="filler"></div>
-        <div class="nav-sign-in" ng-click="showSignInDialog()">Sign in</div>
+        <div class="nav-sign-in" ng-click="showSignInDialog($event)">Sign in</div>
         <div class="nav-account" ng-click="openAccount()"><i class="material-icons">account_circle</i></div>
         <div class="nav-settings" ng-click="openSettings()"><i class="material-icons">settings</i></div>
     </nav>
@@ -25,7 +25,7 @@
                     <div class="menu-minimalize">_</div>
                     <div class="menu-exit" ng-click="menu.onexit()">✕</div>
                 </div>
-                <div class="menu-button" ng-repeat="item in menu.content track by $index" ng-click="item.onopen(menu)">{{item.title}}</div>
+                <div class="menu-button" ng-repeat="item in menu.content track by $index" ng-click="item.onopen($event, menu)">{{item.title}}</div>
                 <div class="filler"></div>
             </div>
             <div ng-mousedown="changeContentSize($event)" class="separator"></div>
@@ -44,6 +44,7 @@
     <script type="text/javascript" src="/client/src/js/app.route.js"></script>
     <script type="text/javascript" src="/client/src/js/user.menu.service.js"></script>
     <script type="text/javascript" src="/client/src/js/main.controller.js"></script>
+    <script type="text/javascript" src="/client/src/js/home.controller.js"></script>
     <script type="text/javascript" src="/client/src/js/sign.in.controller.js"></script>
 </body>
 

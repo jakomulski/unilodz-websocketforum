@@ -3,9 +3,11 @@ angular
     .config(function ($routeProvider) {
         $routeProvider
             .when("/", {
+            controller: 'HomeController',
                 templateUrl: "home.htm"
             })
             .when("/home", {
-                templateUrl: "home.htm"
+                controller: 'HomeController',
+                templateUrl: 'home.htm'
             })
     });

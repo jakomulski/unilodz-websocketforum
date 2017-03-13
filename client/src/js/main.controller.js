@@ -1,12 +1,12 @@
 angular
     .module('app')
     .controller('MainController', ['$scope', '$document', '$location', 'userMenuService', '$mdDialog', function ($scope, $document, $location, userMenuService, $mdDialog) {
-        $scope.showSignInDialog = function (ev) {
+        $scope.showSignInDialog = function (event) {
             $mdDialog.show({
                 controller: 'SingInController',
                 templateUrl: 'sign-up-dialog.htm',
                 parent: angular.element(document.body),
-                targetEvent: ev,
+                targetEvent: event,
                 clickOutsideToClose: true
             });
         };

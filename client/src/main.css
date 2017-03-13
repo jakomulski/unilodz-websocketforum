@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+article.home-page {
+  height: 100%;
+  background-color: #222;
+  padding: 0;
+}
+article.home-page title {
+  display: block;
+  color: #383838;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+article.home-page p {
+  margin: 0;
+  color: white;
+  margin: 0 20px;
+  border-bottom: 1px solid #383838;
+  padding-bottom: 20px;
+}
+article.home-page p a {
+  padding-top: 15px;
+  display: block;
+  text-align: left;
+  color: #777;
+  cursor: pointer;
+}
+article.home-page p a:hover {
+  color: #00bcf2;
+}
+md-toolbar h2 {
+  color: white;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 300 !important;
+}
+md-dialog-actions label {
+  color: #555;
+}
+md-dialog-actions .md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 0;
+  font-size: 14px;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  background-color: #383838;
+  color: #222;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+md-dialog-actions .md-button:hover {
+  background-color: #00f2bc !important;
+}
+md-dialog {
+  border-radius: 0;
+  border: 1px solid #00f2bc;
+  background-color: #222;
+}
+md-toolbar {
+  background-color: #1C1C1C !important;
+}
+md-input-container {
+  color: white;
+}
+md-input-container label {
+  color: #555;
+}
+md-input-container input {
+  color: white;
+  border-color: #383838 !important;
+}
+md-input-container.md-input-focused input {
+  border-color: #00f2bc !important;
+  color: white;
+}
+md-input-container.md-input-focused label {
+  color: #00f2bc !important;
+}
+md-input-container.md-input-has-value input {
+  border-color: #00f2bc !important;
+  color: white;
+}
+md-input-container.md-input-has-value label {
+  color: #00f2bc !important;
+}
+.sign-up-dialog md-dialog-actions span {
+  min-width: 30px !important;
+}
+.sign-up-dialog md-dialog-actions .sign-up {
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.sign-up-dialog md-dialog-actions .sign-up:hover {
+  color: #00f2bc;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v21/2fcrYFNaTjcS6g4U3t-Y5StnKWgpfO2iSkLzTz-AABg.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: #383838;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #1C1C1C;
+  border-bottom: 2px solid #383838;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: #00f2bc;
+}
+nav .nav-title {
+  padding: 10px;
+}
+nav .nav-sign-in,
+nav .nav-account,
+nav .nav-settings {
+  color: white;
+  padding: 10px;
+}
+nav .nav-sign-in:hover,
+nav .nav-settings:hover,
+nav .nav-account:hover {
+  background-color: #2C2C2C;
+  cursor: pointer;
+}
+.filler {
+  flex: auto;
+}
+.container {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+}
+.container .user-menu {
+  display: flex;
+  flex-direction: row;
+}
+.container .user-menu .menu-content {
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+}
+.container .user-menu .menu-content .menu-top {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #383838;
+  color: white;
+}
+.container .user-menu .menu-content .menu-top .menu-minimalize,
+.container .user-menu .menu-content .menu-top .menu-exit {
+  padding: 10px;
+}
+.container .user-menu .menu-content .menu-top .menu-minimalize:hover,
+.container .user-menu .menu-content .menu-top .menu-exit:hover {
+  background-color: red;
+  cursor: pointer;
+}
+.container .user-menu .menu-content .menu-top .menu-title {
+  padding: 10px;
+  color: #00f2bc;
+}
+.container .user-menu .menu-content .menu-button {
+  color: white;
+  padding: 10px;
+}
+.container .user-menu .menu-content .menu-button:hover {
+  color: white;
+  background-color: #2C2C2C;
+  cursor: pointer;
+}
+.container .user-menu .separator {
+  width: 2px;
+  display: block;
+  background-color: #383838;
+  cursor: col-resize;
+}
+.container .content {
+  background-color: #383838;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.container .content .content-top {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #383838;
+  background-color: #222;
+  color: white;
+}
+.container .content .content-top .content-title {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  padding-left: 20px;
+  color: white;
+}
+.container .content .content-top .content-back,
+.container .content .content-top .content-forward {
+  padding: 10px;
+  color: white;
+}
+.container .content .content-top .content-back:hover,
+.container .content .content-top .content-forward:hover {
+  background-color: #2C2C2C;
+  cursor: pointer;
+}
+.container .content ng-view {
+  flex: 1;
+}

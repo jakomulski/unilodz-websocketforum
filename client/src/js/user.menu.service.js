@@ -1,13 +1,13 @@
 angular
     .module('app')
-    .service('userMenuService', ['$location', function ($location) {
+    .service('userMenuService', ['$location', '$mdDialog', function ($location, $mdDialog) {
         var menuStructure = [];
 
         function menu(title, pos, content, action) {
             this.pos = pos;
             this.title = title;
             this.content = content;
-            this.onopen = action ? action : function (menu) {
+            this.onopen = action ? action : function (event, menu) {
                 var index = menuStructure.indexOf(this);
                 if (menuStructure.indexOf(this) === -1) {
                     var menuIndex = menuStructure.indexOf(menu);
@@ -33,8 +33,14 @@ angular
         var forum1 = new menu('forum 1', 2, [], function () {});
 
         var myForums = new menu('my forums', 1, [forum1, forum2]);
-        var addForum = new menu('new forum', 1, [], function () {
-            $location.path('/addforum');
+        var addForum = new menu('new forum', 1, [], function (event) {
+            $mdDialog.show({
+                controller: 'SingInController',
+                templateUrl: 'add-forum-dialog.htm',
+                parent: angular.element(document.body),
+                targetEvent: event,
+                clickOutsideToClose: true
+            });
         });
 
         var settings = new menu('settings', 0, [addForum, myForums]);

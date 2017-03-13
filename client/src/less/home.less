@@ -1,28 +1,65 @@
-article.home-page {
+.home-page {
+    display: flex;
+    flex-direction: row;
     height: 100%;
-    background-color: #222;
-    padding: 0;
-    title {
-        display: block;
-        color: @main-background-color;
-        padding: 10px 20px;
-        font-size: 18px;
-    }
-    p {
-        margin: 0;
-        color: white;
-        margin: 0 20px;
-        border-bottom: 1px solid #383838;
-        padding-bottom: 20px;
-        a {
-            padding-top: 15px;
-            display: block;
-            text-align: left;
-            color: #777;
-            cursor: pointer;
+    overflow: hidden;
+    .forums {
+        height: 0;
+        flex: 2;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .forum {
+            flex-basis: 33.3%;
+            .box {
+                width: inherit;
+                position: relative;
+                .content {
+                    margin: 2px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .box:before {
+                content: "";
+                display: block;
+                padding-top: 100%;
+            }
         }
-        a:hover {
-            color: #00bcf2;
+    }
+    article {
+        flex: 1;
+        background-color: #222;
+        padding: 0;
+        title {
+            display: block;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        p {
+            margin: 0;
+            color: white;
+            margin: 0 20px;
+            border-bottom: 1px solid #383838;
+            padding-bottom: 20px;
+            a {
+                padding-top: 15px;
+                display: block;
+                text-align: left;
+                color: #777;
+                cursor: pointer;
+            }
+            a:hover {
+                color: #00bcf2;
+            }
         }
     }
 }
