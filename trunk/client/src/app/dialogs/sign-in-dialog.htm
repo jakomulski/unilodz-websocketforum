@@ -1,0 +1,38 @@
+<md-dialog class="sign-in-dialog">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>sign in</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-font-set="material-icons">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Login</label>
+                    <input ng-model="user.login">
+                    <div ng-messages="Form.password.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Please enter your password.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Password</label>
+                    <input type="password" ng-model="user.password">
+                    <div ng-messages="Form.password.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Please enter your password.</div>
+                    </div>
+                </md-input-container>
+                <md-dialog-actions layout="row">
+                    <md-button ng-click="signIn()">
+                        sign in
+                    </md-button>
+                    <span flex></span>
+                    <label class="sign-in" ng-click="signUp()">Don't have an account?</label>
+                </md-dialog-actions>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

@@ -1,0 +1,48 @@
+<div class="layout">
+    <div class="file-container">
+        <div class="top">
+            <div class="title">
+                General layout
+            </div>
+            <div class="upward" ng-click="navBack()"><i class="material-icons">arrow_upward</i></div>
+            <div class="locator">
+                <input ng-model="path" />
+            </div>
+
+            <div class="back" ng-hide="true"><i class="material-icons">arrow_back</i></div>
+            <div class="forward" ng-hide="true"><i class="material-icons">arrow_forward</i></div>
+        </div>
+        <div class="files">
+            <div class="scrollable">
+                <div add-class over-parent-width="400 600 800 1000" class="file" ng-repeat="file in files">
+                    <md-menu md-offset="10 20">
+                        <div class="box" oncontextmenu="return false" ng-click="$mdMenu.close(); navInto(file)" ng-right-click="$mdMenu.open()">
+                            <div class="item">
+                                <i class="material-icons" ng-bind="file.icon"></i>
+                                <label ng-bind="file.name"></label>
+                            </div>
+                        </div>
+
+                        <md-menu-content width="2" ng-mouseleave="$mdMenu.close()">
+                            <md-menu-item>
+                                <md-button>
+                                    Open
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button>
+                                    Rename
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button>
+                                    Delete
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

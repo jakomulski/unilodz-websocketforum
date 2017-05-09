@@ -1,0 +1,98 @@
+.layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .file-container {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        .top {
+            min-height: 40px;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 2px solid @main-background-color;
+            background-color: @title-background-color;
+            color: white;
+            .title {
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                color: white;
+                padding: 10px;
+            }
+            .back,
+            .forward,
+            .upward {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                color: white;
+                cursor: pointer;
+            }
+            .locator {
+                display: flex;
+                flex: auto;
+                border-right: 2px solid @main-background-color;
+                border-left: 2px solid @main-background-color;
+                input {
+                    padding: 10px;
+                    flex: auto;
+                    background: transparent;
+                    border: none;
+                    color: white;
+                }
+            }
+        }
+        .files {
+            flex: auto;
+            .scrollable {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .file.over400 {
+                    flex-basis: 25%;
+                }
+                .file.over600 {
+                    flex-basis: 16.6%;
+                }
+                .file.over800 {
+                    flex-basis: 12.5%;
+                }
+                .file.over1000 {
+                    flex-basis: 10%;
+                }
+                .file {
+                    flex-basis: 33.3%;
+                    .box {
+                        width: inherit;
+                        position: relative;
+                        .item {
+                            transition: background-color 0.2s ease;
+                            margin: 12px;
+                            background-color: rgba(0, 0, 0, 0.2);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                        }
+                        .item:hover {
+                            background-color: rgba(0, 0, 0, 0.5);
+                            cursor: pointer;
+                        }
+                    }
+                    .box:before {
+                        content: "";
+                        display: block;
+                        padding-top: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

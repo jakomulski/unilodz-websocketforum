@@ -1,2 +1,4 @@
-/client/node_modules
-/client/bower_components
+/trunk/client/bower_components
+/trunk/client/node_modules
+/trunk/server/forum-cms/.settings
+/branches

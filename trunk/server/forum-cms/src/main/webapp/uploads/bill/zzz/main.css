@@ -1,0 +1,137 @@
+
+body{
+    font-family: Tahoma, Helvetica, Segoe UI, Segoe, Arial, Lucida Grande, Verdana, sans-serif;
+    background-color: #222;
+}
+
+h1, .do_not_print, #layout-header, .content {
+    display: none;
+}
+
+
+table{
+    width: 100%;
+    display: table;
+}
+tbody{
+    position: inherit;
+    display: table;
+    width: 100%;
+/*    border-collapse: collapse;*/
+}
+
+table, th, td {
+/*   border: 1px solid #333;*/
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*jQuery( "a:contains(szczegóły)" ).parent().parent().addClass('details')*/
+td .details {
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+td .details:hover {
+    background-color:beige;
+}
+
+td .details a {
+    
+}
+
+.note {
+    display: none;
+}
+
+.wrtext > table{
+    display: none;
+}
+
+.wrtext > .grey{
+    display: block;
+}
+
+tbody[id^=tab]>tr {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100px;
+    
+}
+
+tbody[id^=tab]>tr>td:nth-child(1) {
+    display:block;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align:bottom;
+}
+
+tbody[id^=tab]>tr>td:nth-child(2) {
+    display: none;
+}
+
+tbody[id^=tab]>tr>td:nth-child(3) {
+    display: inline-block;
+    padding: 0px 15px 10px 15px;
+    min-width: 250px;
+}
+
+tbody[id^=tab]>tr>td:nth-child(3) span {
+/*    padding: 10px;*/
+}
+
+tbody[id^=tab]>tr>td:nth-child(4) {
+    display: block;
+    margin-left: auto;
+    margin-top: auto;
+    text-align: right;
+}
+tbody[id^=tab]>tr>td:nth-child(4):hover {
+/*    background-color: white;*/
+}
+
+tbody[id^=tab]>tr>td:nth-child(4) span{
+    display: block;
+}
+
+tbody[id^=tab]>tr>td:nth-child(4) a:first-child{
+    background-color: #333;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+}
+
+tbody[id^=tab]>tr>td:nth-child(4) img {
+    display: none;
+    padding: 0;
+}
+
+tbody[id^=tab]>tr:nth-child(odd){ 
+		background: #ECECEC;
+}
+tbody[id^=tab]>tr:nth-child(even){ 
+		background: #D8D8D8;
+}
+
+.midnote>td {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+a[id^=link] {
+    cursor: pointer;
+    background-color: #ECECEC;
+    color: #333;
+    height: 40px;
+    width: 60px;
+    display:block;
+    float: right;
+    
+}

@@ -1,0 +1,46 @@
+<div class="sign-up">
+    <form>
+        <div class="content">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Login</label>
+                <input ng-model="user.login">
+                <div ng-messages="Form.login.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter your login.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Choose a password</label>
+                <input type="password" ng-model="user.password">
+                <div ng-messages="Form.password.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter your password.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Re-enter password</label>
+                <input type="password">
+                <div ng-messages="Form.password.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please re-enter your password.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Your current email address</label>
+                <input ng-model="user.email">
+                <div ng-messages="Form.email.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please enter your email address.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Re-enter email address</label>
+                <input>
+                <div ng-messages="Form.email.$error" role="alert" multiple="">
+                    <div ng-message="required" class="my-message">Please re-nter your email address.</div>
+                </div>
+            </md-input-container>
+            <md-dialog-actions layout="row">
+                <md-button>
+                    Create an Account
+                </md-button>
+            </md-dialog-actions>
+        </div>
+    </form>
+</div>

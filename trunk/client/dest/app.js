@@ -1,0 +1,1 @@
+define(["angular","angular-material","angular-aria","angular-animate","ui-router"],function(angular){"use strict";return angular.module("app",["ngMaterial","ngAnimate","ngAria","ui.router"])});

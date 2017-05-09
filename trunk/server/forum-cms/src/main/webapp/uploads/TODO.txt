@@ -1,0 +1,4 @@
+Procedury:
+
+wypiszCele()
+wypiszTrenerowKtórzyZaakceptowaliZaproszenia(loginUzytkownika)

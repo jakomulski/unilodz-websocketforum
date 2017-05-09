@@ -1,0 +1,34 @@
+.actions-toast {
+    margin: 0;
+    .md-toast-content {
+        padding: 0 !important;
+        max-height: none;
+        .actions-toast-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .toolbar {
+                min-width: 100%;
+                display: flex;
+                flex-direction: row;
+                background: @title-background-color;
+            }
+            .content {
+                overflow-y: auto;
+                display: block;
+                background-color: @content-background-color;
+                flex: 1;
+                padding: 0 20px;
+                .action {
+                    display: flex;
+                    align-items: center;
+                    min-height: 50px;
+                    .status {}
+                }
+                .filler {
+                    flex: auto;
+                }
+            }
+        }
+    }
+}

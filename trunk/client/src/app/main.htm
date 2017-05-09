@@ -1,0 +1,33 @@
+<nav>
+    <div class="nav-title">comments.io</div>
+    <div class="filler"></div>
+    <div class="nav-sign-in" ng-hide="true" ng-click="showSignInDialog($event)">Sign in</div>
+    <div class="nav-logged-as" ng-show="true">user_22</div>
+    <div class="nav-account" ng-click="openAccount()"><i class="material-icons">account_circle</i></div>
+    <div class="nav-settings" ng-click="openSettings()"><i class="material-icons">settings</i></div>
+</nav>
+<div class="container">
+    <div class="user-menu" ng-repeat="menu in menuStructure track by $index">
+
+        <div class="menu-content">
+            <div class="menu-top">
+                <div class="menu-title">{{menu.title}}</div>
+                <div class="filler"></div>
+                <div class="menu-minimalize"><i>_</i></div>
+                <div class="menu-exit" ng-click="menu.onexit()"><i class="material-icons">close</i></div>
+            </div>
+            <div class="menu-button" ng-repeat="item in menu.content track by $index" ng-click="item.onopen($event, menu)">{{item.title}}</div>
+            <div class="filler"></div>
+        </div>
+        <div ng-mousedown="changeContentSize($event)" class="separator"></div>
+    </div>
+    <div class="content">
+        <div class="content-top">
+            <div class="content-back"><i class="material-icons">arrow_back</i></div>
+            <div class="content-forward"><i class="material-icons">arrow_forward</i></div>
+            <div class="content-title" ng-bind="getPageTitle()"></div>
+            <div class="filler"></div>
+        </div>
+        <ui-view></ui-view>
+    </div>
+</div>

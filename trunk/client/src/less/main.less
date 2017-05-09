@@ -1,0 +1,152 @@
+@title-background-color: #1C1C1C;
+@main-background-color: #383838;
+@main-accent-color: #00f2bc;
+@main-hover-color: #2C2C2C;
+@content-background-color: #222;
+@text-holder-color: #555;
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "add-dialog.less";
+@import "sign-in-dialog.less";
+@import "home.less";
+@import "global.less";
+@import "sign-up.less";
+@import "layout.less";
+@import "actions-toast";
+html,
+body {
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: @main-background-color;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: @title-background-color;
+    border-bottom: 2px solid @main-background-color;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 200;
+    color: @main-accent-color;
+    .nav-title,
+    .nav-logged-as {
+        padding: 10px;
+    }
+    .nav-title {
+        padding-left: 15px;
+        font-weight: 200;
+    }
+    .nav-sign-in,
+    .nav-account,
+    .nav-settings {
+        color: white;
+        padding: 10px;
+    }
+    .nav-sign-in:hover,
+    .nav-settings:hover,
+    .nav-account:hover {
+        background-color: @main-hover-color;
+        cursor: pointer;
+    }
+}
+
+.filler {
+    flex: auto;
+}
+
+.container {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    .user-menu {
+        display: flex;
+        flex-direction: row;
+        .menu-content {
+            background-color: @content-background-color;
+            display: flex;
+            flex-direction: column;
+            .menu-top {
+                min-height: 40px;
+                display: flex;
+                flex-direction: row;
+                border-bottom: 2px solid @main-background-color;
+                background-color: @content-background-color;
+                color: white;
+                .menu-minimalize,
+                .menu-exit {
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    padding: 0 10px;
+                }
+                .menu-minimalize:hover,
+                .menu-exit:hover {
+                    background-color: red;
+                    cursor: pointer;
+                }
+                .menu-title {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px;
+                    color: @main-accent-color;
+                }
+            }
+            .menu-button {
+                color: white;
+                padding: 10px;
+            }
+            .menu-button:hover {
+                color: white;
+                background-color: @main-hover-color;
+                cursor: pointer;
+            }
+        }
+        .separator {
+            width: 2px;
+            display: block;
+            background-color: @main-background-color;
+            cursor: col-resize;
+        }
+    }
+    .content {
+        background-color: @main-background-color;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .content-top {
+            min-height: 40px;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 2px solid @main-background-color;
+            background-color: @content-background-color;
+            color: white;
+            .content-title {
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+                color: white;
+            }
+            .content-back,
+            .content-forward {
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                color: white;
+            }
+            .content-back:hover,
+            .content-forward:hover {
+                background-color: @main-hover-color;
+                cursor: pointer;
+            }
+        }
+        ui-view {
+            flex: 1;
+        }
+    }
+}

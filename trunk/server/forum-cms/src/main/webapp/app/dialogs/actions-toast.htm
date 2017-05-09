@@ -1,0 +1,20 @@
+<md-toast class="actions-toast">
+    <div class="actions-toast-container">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Actions</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="closeToast()">
+                    <md-icon md-font-set="material-icons">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <div class="content">
+            <div class="action" ng-repeat="action in actions">
+                <div class="status" ng-bind="action.fileName"></div>
+                <div class="filler"></div>
+                <div class="status" ng-bind="action.status"></div>
+            </div>
+        </div>
+    </div>
+</md-toast>
