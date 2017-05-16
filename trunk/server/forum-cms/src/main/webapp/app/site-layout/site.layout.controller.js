@@ -15,7 +15,7 @@ define(['app', 'app/services/file.manager.service', 'app/common/add.class.direct
             fileManagerService.navBack();
             fileManagerService.getFiles();
         };
-        $rootScope.$on('fileAction', function () {
+        $rootScope.$on('fileAction', function () {    	
             $scope.data.files = fileManagerService.files;
             $scope.path = fileManagerService.getPath();
             $scope.$apply();

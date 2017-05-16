@@ -26,6 +26,8 @@ define(['app', 'app/services/user.client.service'], function (app) {
                 $http.defaults.headers.common.Authorization = 'Bearer ' + responseData.data.access_token;
                 $scope.$emit('signInEvent',$scope.user.username);
                 $mdDialog.hide();
+                debugger;
+                userClientService.addUser();
             });
         };
     });

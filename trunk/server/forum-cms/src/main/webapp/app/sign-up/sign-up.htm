@@ -3,7 +3,7 @@
         <div class="content">
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Login</label>
-                <input ng-model="user.login">
+                <input ng-model="user.username">
                 <div ng-messages="Form.login.$error" role="alert" multiple="">
                     <div ng-message="required" class="my-message">Please enter your login.</div>
                 </div>
@@ -37,7 +37,7 @@
                 </div>
             </md-input-container>
             <md-dialog-actions layout="row">
-                <md-button>
+                <md-button ng-click="createAccount(user)">
                     Create an Account
                 </md-button>
             </md-dialog-actions>

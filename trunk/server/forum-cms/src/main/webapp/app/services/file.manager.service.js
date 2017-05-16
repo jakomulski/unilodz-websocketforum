@@ -1,6 +1,6 @@
 define([ 'app' ], function(app) {
 	app.service('fileManagerService', function($timeout, $rootScope,
-			actionsService, $q, $http) {
+			actionsService, $q, $http, $state) {
 		var parent = this;
 		var locator = [];
 		this.files = [];
@@ -21,7 +21,8 @@ define([ 'app' ], function(app) {
 			var fd = new FormData();
 			fd.append('file', file);
 			fd.append('path', locator);
-
+			fd.append('siteName', $state.params.name);
+			
 			$http.post('/files', fd, {
 				transformRequest : angular.identity,
 				headers : {
@@ -33,16 +34,7 @@ define([ 'app' ], function(app) {
 
 		};
 
-		this.gett = function() {
-			$http({
-				method : 'GET',
-				url : '/user'
-			}).then(function successCallback(response) {
-				debugger;
-			}, function errorCallback(response) {
-				debugger;
-			});
-		};
+		
 
 		this.getFiles = function() {
 			loadFiles().then(function(data) {
@@ -54,17 +46,23 @@ define([ 'app' ], function(app) {
 				$rootScope.$emit('fileAction')
 			})
 		};
+		
+		this.getSites = function() {
+			return $http.get('/site/list');
+		};
 
 		var loadFiles = function() {
-			var toParse = {
-				'path' : '\asd\asd'
-			};
-			var req = {
-				method : 'POST',
-				url : "http://localhost:8080/files/directories",
-				data : locator
-			}
-			return $http(req);
+			var fd = new FormData();
+			fd.append('path', locator);
+			fd.append('siteName', $state.params.name);
+			debugger;
+		
+			return $http.post('/files/directories', fd, {
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			});
 		}
 
 		var addIconToFile = function(file) {
@@ -75,7 +73,6 @@ define([ 'app' ], function(app) {
 		};
 
 		this.navInto = function(file) {
-			debugger;
 			if (file.type === 'FOLDER') {
 				locator.push(file.name);
 			}
@@ -83,31 +80,12 @@ define([ 'app' ], function(app) {
 		this.navBack = function() {
 			locator.pop();
 		};
-		this.uploadFileOld = function(rawFile) {
-			var action = {
-				status : 'pending',
-				fileName : rawFile.name,
-				request : function() {
-					var deferred = $q.defer();
-					var start = new Date().getTime();
-					for (var i = 0; i < 1e7; i++) {
-						if ((new Date().getTime() - start) > 1000) {
-							break;
-						}
-					}
-					var file = {
-						type : 'file',
-						name : rawFile.name
-					};
-					addIconToFile(file);
-					parent.files.push(file);
-					// should be getFiles();
-					action.status = 'uploaded';
-					$rootScope.$emit('fileAction');
-					return deferred.resolve();
-				}
-			};
-			actionsService.addAction(action);
-		};
+		this.addSite = function(site) {
+			return $http({
+				method : 'POST',
+				url : '/site/add',
+				data: site
+			});
+		}
 	});
 });

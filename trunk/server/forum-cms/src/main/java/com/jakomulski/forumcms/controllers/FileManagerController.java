@@ -11,10 +11,8 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,13 +28,13 @@ public class FileManagerController {
 	@Autowired
 	private HttpServletRequest request;
 
-	@PreAuthorize("#oauth2.hasScope('read')")
+	// @PreAuthorize("#oauth2.hasScope('read')")
 	@RequestMapping(method = RequestMethod.POST, path = "/directories")
-	public List<com.jakomulski.forumcms.models.File> get(@RequestBody List<String> relativePath,
-			OAuth2Authentication auth) {
+	public List<com.jakomulski.forumcms.models.File> get(@ModelAttribute("path") ArrayList<String> relativePath,
+			@ModelAttribute("siteName") String siteName, OAuth2Authentication auth) {
 
 		// Map<String, List<String>> map = new HashMap<>();
-		String fullPath = getBaseUserPath(auth.getName()) + String.join("\\", relativePath);
+		String fullPath = getBaseUserPath(auth.getName()) + "\\" + siteName + "\\" + String.join("\\", relativePath);
 		List<com.jakomulski.forumcms.models.File> directories = getDirectories(fullPath);
 		// map.put("directories", directories);
 
@@ -60,10 +58,10 @@ public class FileManagerController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	public Object uploadFile(@ModelAttribute("file") MultipartFile file, @ModelAttribute("path") ArrayList<String> path,
-			OAuth2Authentication auth) {
+			@ModelAttribute("siteName") String siteName, OAuth2Authentication auth) {
 		if (!file.isEmpty()) {
 			try {
-				saveFile(file, auth.getName() + "\\" + String.join("\\", path));
+				saveFile(file, auth.getName() + "\\" + siteName + "\\" + String.join("\\", path));
 			} catch (IllegalStateException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

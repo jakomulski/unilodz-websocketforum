@@ -1,3 +1,12 @@
-define(['app'], function (app) {
-    app.controller('SignUpController', ['$scope', function ($scope) {}]);
+define(['app', 'app/services/user.client.service'], function (app) {
+    app.controller('SignUpController', function ($scope, userClientService) {
+    	$scope.createAccount = function(user){
+    		debugger;
+    		userClientService.createAccount(user).then(function(result){
+    			debugger;
+    		});	
+    	}
+    });
+
+    
 });

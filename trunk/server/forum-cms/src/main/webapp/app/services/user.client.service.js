@@ -15,5 +15,14 @@ define(['app'], function (app) {
             }
             return $http(req);
         };
+        
+        this.createAccount = function (user) {
+        	return $http({
+				method : 'POST',
+				url : 'http://localhost:8080/user/add',
+				data: user
+			});
+        };
+        
     });
 });

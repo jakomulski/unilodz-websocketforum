@@ -21,7 +21,6 @@ define(['app'], function (app) {
                         reader.readAsArrayBuffer(f);
 
                         reader.onload = (function (theFile) {
-                            debugger;
                             return function (e) {
                                 var newFile = {
                                     name: theFile.name,
